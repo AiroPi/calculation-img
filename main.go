@@ -11,15 +11,15 @@ import (
 )
 
 func imageGeneration() image.Image {
-	dc := gg.NewContext(800, 200)
+	dc := gg.NewContext(1000, 200)
 	dc.SetRGB(1, 1, 1)
 	if err := dc.LoadFontFace("./LatinmodernmathRegular.otf", 100); err != nil {
 		panic(err)
 	}
-	denom := rand.Intn(4) + 1
-	prod := rand.Intn(4) + 1
-	calc := fmt.Sprintf("%d × (%d / %d) =", rand.Intn(9)+1, denom*prod, denom)
-	dc.DrawStringAnchored(calc, 400, 100, 0.5, 0.5)
+	denom := rand.Intn(4) + 2
+	prod := rand.Intn(3) + 2
+	calc := fmt.Sprintf("%d × (%d / %d) + %d =", rand.Intn(8)+2, denom*prod, denom, rand.Intn(19)+1)
+	dc.DrawStringAnchored(calc, 500, 100, 0.5, 0.5)
 	return dc.Image()
 }
 
