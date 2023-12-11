@@ -12,7 +12,7 @@ import (
 
 func imageGeneration() image.Image {
 	dc := gg.NewContext(800, 200)
-	dc.SetRGB(0, 0, 0)
+	dc.SetRGB(1, 1, 1)
 	if err := dc.LoadFontFace("./LatinmodernmathRegular.otf", 100); err != nil {
 		panic(err)
 	}
@@ -31,7 +31,7 @@ func handleRequest(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/octet-stream")
-	// w.Header().Set("Cache-Control", "no-cache, max-age=0")
+	w.Header().Set("Cache-Control", "no-cache, max-age=0")
 
 	img := imageGeneration()
 	png.Encode(w, img)
