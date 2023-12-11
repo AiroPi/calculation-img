@@ -31,7 +31,7 @@ func handleRequest(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/octet-stream")
-	w.Header().Set("Cache-Control", "no-cache, max-age=0")
+	// w.Header().Set("Cache-Control", "no-cache, max-age=0")
 
 	img := imageGeneration()
 	png.Encode(w, img)
