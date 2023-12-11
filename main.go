@@ -13,7 +13,7 @@ import (
 func imageGeneration() image.Image {
 	dc := gg.NewContext(800, 200)
 	dc.SetRGB(0, 0, 0)
-	if err := dc.LoadFontFace("./LatinmodernmathRegular-z8EBa.otf", 100); err != nil {
+	if err := dc.LoadFontFace("./LatinmodernmathRegular.otf", 100); err != nil {
 		panic(err)
 	}
 	denom := rand.Intn(4) + 1
